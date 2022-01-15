@@ -41,7 +41,7 @@
 (defgroup org-hide-leading-stars nil
   "Hide babel source code markers in org-mode."
   :prefix "org-hide-leading-stars-"
-  :group 'org-babel)
+  :group 'org)
 
 (defvar org-hide-leading-stars--re "^[ \t]*\\*+"
   "Regex used to recognize source block markers.")
