@@ -1,4 +1,4 @@
-;;; org-babel-hide-markers.el --- Hide org-babel source code markers  -*- lexical-binding: t; -*-
+;;; org-hide-leading-stars.el --- Hide org-babel source code markers  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021  Arthur Miller
 
@@ -31,41 +31,41 @@
 ;;
 ;; To hide all markers turn on org-hbm-mode by
 ;;
-;;          `M-x org-babel-hide-markers-mode.'
+;;          `M-x org-hide-leading-stars-mode.'
 ;;
 ;; To turn it off execute the same command.
 
 ;;; Issues
 
 ;;; Code:
-(defgroup org-hide-heading-stars nil
+(defgroup org-hide-leading-stars nil
   "Hide babel source code markers in org-mode."
-  :prefix "org-hide-heading-stars-"
+  :prefix "org-hide-leading-stars-"
   :group 'org-babel)
 
-(defvar org-hide-heading-stars--re "^[ \t]*\\*+"
+(defvar org-hide-leading-stars--re "^[ \t]*\\*+"
   "Regex used to recognize source block markers.")
 
-(defun org-hide-heading-stars--update-headings (visibility)
+(defun org-hide-leading-stars--update-headings (visibility)
   "Update invisible property to VISIBILITY for markers in the current buffer."
   (save-excursion
     (goto-char (point-min))
     (with-silent-modifications
-      (while (re-search-forward org-hide-heading-stars--re nil t)
+      (while (re-search-forward org-hide-leading-stars--re nil t)
           (put-text-property
            (match-beginning 0) (match-end 0) 'invisible visibility)))))
 
 ;;;###autoload
-(define-minor-mode org-hide-heading-stars-mode
+(define-minor-mode org-hide-leading-stars-mode
   "Hide/show babel source code blocks on demand."
-  :global nil :lighter " Org-hhs"
+  :global nil :lighter " Org-hls"
   (unless (derived-mode-p 'org-mode)
     (error "Not in org-mode"))
-  (cond (org-hide-heading-stars-mode
-         (org-hide-heading-stars--update-headings t))
+  (cond (org-hide-leading-stars-mode
+         (org-hide-leading-stars--update-headings t))
         (t (font-lock-ensure)
-           (org-hide-heading-stars--update-headings nil))))
+           (org-hide-leading-stars--update-headings nil))))
 
-(provide 'org-hide-heading-stars)
+(provide 'org-hide-leading-stars)
 
-;;; org-hide-heading-stars.el ends here
+;;; org-hide-leading-stars.el ends here
