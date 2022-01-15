@@ -22,7 +22,7 @@
 ;; Version: 0.0.1
 ;; Keywords: tools convenience
 ;; Package-Requires: ((emacs "25.1"))
-;; URL: https://github.com/amno1/org-babel-hide-markers-mode
+;; URL: https://github.com/amno1/org-hide-leading-stars
 
 ;;; Commentary:
 
