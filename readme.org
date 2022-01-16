@@ -4,6 +4,15 @@
   elsewhere too. It will completely hide leading star markers by changing their
   'invisible' text property.
 
+  There is probably a limited utility for this hack. The important thing to note
+  is that is removes the indentation, since indentation is by definition
+  introduced with leading stars. That may or may not be a dealbreaker for some
+  use-cases.
+
+  Eventually, one could add an extra space after the leading stars, one per each
+  leading star, to keep a minimal amount of indentation going on, even if stars
+  are hidden.
+
 * Installation  
 
   Either clone this repo or just download 'org-hide-leading-stars.el'.
@@ -14,6 +23,11 @@
   M-x package-install-file RET org-hide-leading-stars.el RET
 
   or just require file in your init file somewhere.
+
+* Requirements
+
+  Really none, should be compatible with Emacs 22.1 but package.el does not
+  recognize requirements older than Emacs 24.1, it is satt to that one.
 
 * Usage
 
