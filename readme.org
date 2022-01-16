@@ -6,10 +6,14 @@
 
 * Installation  
 
-  Either clone this repo or just download 'ob-hide-markers.el'. From there you
-  have option to either M-x package-install-file RET org-hide-leading-stars.el
-  RET or just put the file somewhere where Emacs can find it and do appropriate
-  autoload or require.
+  Either clone this repo or just download 'org-hide-leading-stars.el'.
+
+  Put org-hide-leading-stars.el somewhere in Emacs load-path. From there you
+  have option to either:
+
+  M-x package-install-file RET org-hide-leading-stars.el RET
+
+  or just require file in your init file somewhere.
 
 * Usage
 
