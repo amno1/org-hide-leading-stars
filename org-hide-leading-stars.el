@@ -21,7 +21,7 @@
 ;; Author: Arthur Miller
 ;; Version: 0.0.1
 ;; Keywords: tools convenience
-;; Package-Requires: ((emacs "25.1"))
+;; Package-Requires: ((emacs "22.1"))
 ;; URL: https://github.com/amno1/org-hide-leading-stars
 
 ;;; Commentary:
