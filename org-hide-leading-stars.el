@@ -63,8 +63,7 @@
     (error "Not in org-mode"))
   (cond (org-hide-leading-stars-mode
          (org-hide-leading-stars--update-headings t))
-        (t (font-lock-ensure)
-           (org-hide-leading-stars--update-headings nil))))
+        (t (org-hide-leading-stars--update-headings nil))))
 
 (provide 'org-hide-leading-stars)
 
