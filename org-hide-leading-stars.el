@@ -39,12 +39,12 @@
 
 ;;; Code:
 (defgroup org-hide-leading-stars nil
-  "Hide babel source code markers in org-mode."
+  "Hide leading stars in org-headings."
   :prefix "org-hide-leading-stars-"
   :group 'org)
 
 (defvar org-hide-leading-stars--re "^[ \t]*\\*+"
-  "Regex used to recognize source block markers.")
+  "Regex used to recognize leading stars in org-headings.")
 
 (defun org-hide-leading-stars--update-headings (visibility)
   "Update invisible property to VISIBILITY for markers in the current buffer."
