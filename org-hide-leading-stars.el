@@ -38,22 +38,25 @@
 ;;; Issues
 
 ;;; Code:
+(require 'org)
+
 (defgroup org-hide-leading-stars nil
   "Hide leading stars in org-headings."
   :prefix "org-hide-leading-stars-"
   :group 'org)
 
-(defvar org-hide-leading-stars--re "^[ \t]*\\*+"
+(defvar org-leading-stars-re "^[ \t]*\\*+"
   "Regex used to recognize leading stars in org-headings.")
 
 (defun org-hide-leading-stars--update-headings (visibility)
   "Update invisible property to VISIBILITY for markers in the current buffer."
-  (save-excursion
-    (goto-char (point-min))
-    (with-silent-modifications
-      (while (re-search-forward org-hide-leading-stars--re nil t)
-          (put-text-property
-           (match-beginning 0) (match-end 0) 'invisible visibility)))))
+  (org-with-wide-buffer
+   (save-excursion
+     (goto-char (point-min))
+     (with-silent-modifications
+       (while (re-search-forward org-leading-stars-re nil t)
+         (put-text-property
+          (match-beginning 0) (match-end 0) 'invisible visibility))))))
 
 ;;;###autoload
 (define-minor-mode org-hide-leading-stars-mode
