@@ -1,4 +1,4 @@
-;;; org-hide-leading-stars.el --- Hide org-babel source code markers  -*- lexical-binding: t; -*-
+;;; org-hide-leading-stars.el --- Hide leading stars in org headings  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021  Arthur Miller
 
